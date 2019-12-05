@@ -7,7 +7,7 @@
 
 /*
 Assignment 6.3: program for findinding N fibonacci number for given input
-Implementd using Binary search algorithm with Complexity is O(n)
+Implementd using Recursive algorithm
 
 */
 
@@ -86,16 +86,16 @@ FIBONACCI:
         PUSH {R3};                     
             
         SUBS R0, R0, #1;                  
-        BNE F_CONT;                       
+        BNE CONT;                       
         B DONE;                           @Branch to DONE if complete
 
-F_CONT:         
+CONT:         
         BL FIBONACCI;                     @Recursively call the subroutine Fibonacci
 
 DONE:                
-        POP {R0};                         @Pop the first element from the stack which is the result of the latest computation -> required result
-        MOV R5, #4;                       @As each LR address is stored on stack, perform these steps to calculate return address to the main program
-        MUL R4, R4, R5;                   @Increment the Stack pointer by (no. of times the Fibonacci sequence ran)*4 bytes to point it to the return address to main
+        POP {R0};                         
+        MOV R5, #4;                       
+        MUL R4, R4, R5;                   
         ADD SP, SP, R4;
         POP {PC};                         @Pop the result to PC, return
         .end

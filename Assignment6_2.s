@@ -7,7 +7,7 @@
 
 /*
 Assignment 6.2: program for searching a given integer number in an array of integer numbers(SORTED)
-Implementd using Binary search algorithm with Complexity is O(n)
+Implementd using Binary search algorithm with Complexity is O(LogN)
 
 */
 
